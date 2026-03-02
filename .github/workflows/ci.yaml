@@ -95,7 +95,6 @@ jobs:
 
           # Configure Maven to use Artifactory virtual repository based on branch
           jf mvnc \
-            -DaltDeploymentRepository=central::${DEPLOY_URL} \
             --repo-resolve-snapshots $MVN_VIRTUAL_REPO \
             --repo-resolve-releases $MVN_REMOTE_REPO \
             --repo-deploy-snapshots $MVN_LOCAL_REPO \
@@ -103,6 +102,7 @@ jobs:
         
           # Run tests, build and deploy
           jf mvn clean deploy \
+            -DaltDeploymentRepository=central::${DEPLOY_URL} \
             --build-name=${{ env.MVN_BUILD_NAME }}-${{ env.REPO_ENV }} \
             --build-number=$GITHUB_RUN_NUMBER \
             --project ${{ env.JFROG_PROJECT_KEY }}
