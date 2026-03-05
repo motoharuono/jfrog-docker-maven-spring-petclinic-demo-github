@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 env:
-  JFROG_PROJECT_KEY: "20260305-ono"
+  JFROG_PROJECT_KEY: "ono"
   MVN_BUILD_NAME: "maven-spring-petclinic"
   DOCKER_BUILD_NAME: "docker-spring-petclinic"
   MVN_REPO_PREFIX: "backend-maven"
